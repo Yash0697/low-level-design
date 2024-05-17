@@ -32,7 +32,7 @@ public class ATM {
 				cashDispenser.dispenseCash(amount);
 				cashDispenser.ejectCard();
 				break;
-//			---  moore cases here
+//			---  more cases here
 			default:
 				System.out.println("Oops! not valud transaction. What have you chosen?");
 		}

@@ -1,5 +1,7 @@
 package com.yash.design.atm.service;
 
+import java.time.format.DateTimeFormatter;
+
 import com.yash.design.atm.ATM;
 import com.yash.design.atm.dto.Account;
 import com.yash.design.atm.dto.Bank;
@@ -34,7 +36,10 @@ public class AccountService {
 
 	public void printReceipt() {
 		Transaction trans = this.bank.printReceipt(account);
-		System.out.println("Last transaction was of amount "+trans.getAmount()+" and happened on "+trans.getDate());
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSSSSS");
+		DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("dd MMM uuuu HH:mm:ss");
+		String date = dtf2.format(dtf.parse(trans.getDate()));
+		System.out.println("Last transaction was of amount "+trans.getAmount()+" and happened on "+date);
 	}
 
 	public boolean isBalanceZero() {
