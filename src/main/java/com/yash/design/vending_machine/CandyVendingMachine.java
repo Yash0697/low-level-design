@@ -44,7 +44,7 @@ public class CandyVendingMachine {
 
     public void pressKey() {
         this.state.pressKey();
-        // this.state.dispenseCandy(); // user can't ask machine to dispense a candy directly, only stae should have that responsibility
+        // this.state.dispenseCandy(); // user can't ask machine to dispense a candy directly, only state should have that responsibility
     }
 
     public void releaseCandy() {
